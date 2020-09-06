@@ -51,7 +51,7 @@
                         <div class="row justify-content-center">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="name"  [(ngModel)]="customer_name"  class="form-control"  name="name" placeholder="Name">
+                                    <input type="name"  [(ngModel)]="customer_name"  class="form-control" maxlength="25" name="name" placeholder="Name" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -61,13 +61,13 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control"  [(ngModel)]="customer_number"  name="Phone" placeholder="Phone">
+                                    <input type="text" class="form-control"  [(ngModel)]="customer_number"  maxlength="14" name="Phone" placeholder="Phone" required>
                                 </div>
                             </div>
                            
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <button class="btn-default" type="submit" (click)="toggle=true">Done</button>
+                                    <input type="button"  class="form-control" value="Done" (click)="toggle=true">
                                 </div>
                             </div>
                         </div>

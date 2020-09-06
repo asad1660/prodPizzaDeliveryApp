@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
 import { Router } from '@angular/router';
-import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-menu',
@@ -42,16 +41,13 @@ export class MenuComponent implements OnInit {
       alert("Please Quantity");
     }
 
-    console.log(this.cartList);
   }
 
 
   delete(i,p,q){
-    console.log(i);
    this.cartList.splice(i,1);
    this.price=p*q;
    this.total=this.total-this.price;
-    console.log(this.cartList);
   }
 customerdetail(){
   localStorage.setItem("data",JSON.stringify(this.cartList));
