@@ -42,7 +42,7 @@
       <h2>Menu</h2>
       
     <div class="row">
-      <div *ngFor="let pizza of pizzaList">
+      <div *ngFor="let pizza of pizzaList;let i=index">
       <div >
         <p><b>{{"Name :"+pizza.name}}</b></p>
         <img class="img" [src]="pizza.image " style="height:200px;">
@@ -53,8 +53,8 @@
       <br>
       
       </div>
-      <input type="number" min="0" [(ngModel)]="pizza.quantity" (input)="addquantity($event)" >
-      <button class="btn-success" (click)="addToCart(pizza,pizza.price,pizza.quantity)">Add to cart</button>
+      <input type="number" min="0"[(ngModel)]="this.quantity" (input)="addquantity($event)" >
+      <button class="btn-success" (click)="addToCart(pizza,pizza.price)">Add to cart</button>
       </div>
       </div>
   </div>

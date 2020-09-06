@@ -42,7 +42,7 @@
       
       </div>
       </div>
-      <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+      <section *ngIf="cartList.length > 0"class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
         <div *ngIf="!toggle" class="container">
             <div class="row no-gutters">
                 <div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
@@ -67,7 +67,7 @@
                            
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="button"  class="form-control" value="Done" (click)="toggle=true">
+                                    <input type="button"  class="form-control" value="Done" (click)="bill()">
                                 </div>
                             </div>
                         </div>
@@ -76,5 +76,7 @@
             </div>
         </div>
     </section>
+
+    
   
     

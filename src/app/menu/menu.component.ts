@@ -28,17 +28,25 @@ export class MenuComponent implements OnInit {
     if(e.target.value < 0){
       e.target.value=0;
     }
+    else{
+      this.quantity=e.target.value;
+      
+    }
   }
-  addToCart(pizza,p,q)
+  addToCart(pizza,p)
   {
 
-    if(q>0 ){
-     this.price=p * q; 
+    if(this.quantity>0 ){
+     this.price=p * this.quantity; 
     this.total=this.total+this.price;
+    pizza.quantity=Number(this.quantity);
     this.cartList.push(pizza); 
+    this.quantity=0;
+    console.log(this.cartList);
+
     }
     else{
-      alert("Please Quantity");
+      alert("Please add Quantity");
     }
 
   }
@@ -48,6 +56,7 @@ export class MenuComponent implements OnInit {
    this.cartList.splice(i,1);
    this.price=p*q;
    this.total=this.total-this.price;
+
   }
 customerdetail(){
   localStorage.setItem("data",JSON.stringify(this.cartList));
