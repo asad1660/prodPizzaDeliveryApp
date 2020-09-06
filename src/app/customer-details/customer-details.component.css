@@ -1,0 +1,67 @@
+
+
+    .testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+    }
+  
+    .block-27 ul {
+        padding: 0;
+        margin: 0; }
+        .block-27 ul li {
+          display: inline-block;
+          margin-bottom: 4px;
+          font-weight: 400; }
+          .block-27 ul li a, .block-27 ul li span {
+            border: 1px solid #e52b34;
+            text-align: center;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%; }
+          .block-27 ul li.active a, .block-27 ul li.active span {
+            background: #e52b34;
+            color: #fff;
+            border: 1px solid transparent; }
+      
+      .form-control {
+        height: 52px !important;
+        background: #fff !important;
+        color: #000000 !important;
+        font-size: 16px;
+        border-radius: 0px;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid rgba(0, 0, 0, 0.1); }
+        .form-control:focus, .form-control:active {
+          border-color: #000000; }
+      
+      textarea.form-control {
+        height: inherit !important; }
+      
+      .ftco-animate {
+        opacity: 0;
+        visibility: hidden; }
+      
+      .bg-primary {
+        background: #e52b34 !important; }
+      
+      .about-author .desc h3 {
+        font-size: 24px; }
+      
+      .ftco-section {
+        padding: 8em 0;
+        position: relative; }
+      
+      .ftco-no-pt {
+        padding-top: 0; }
+      
+      .ftco-no-pb {
+        padding-bottom: 0; }
+      
+      .ftco-bg-dark {
+        background: #3c312e; }

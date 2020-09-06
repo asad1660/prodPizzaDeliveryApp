@@ -1,0 +1,80 @@
+
+
+
+  
+  <section class="hero-wrap">
+    <div class="home-slider owl-carousel js-fullheight">
+        <div class="slider-item js-fullheight" style="background-image:url(assets/bg_1.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                    <div class="col-md-12 ftco-animate">
+                        <div class="text w-100 mt-5 text-center">
+                            <span class="subheading"><h2>Taste.it Restaurant</h2></span>
+                            <h1>Cooking Since</h1>
+                            <span class="subheading-2">1958</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</section>
+  <div *ngIf="toggle" class="testbox">
+    <div>
+      <h2><b>Bill</b></h2>
+      <p><b>Name :</b>{{customer_name}}</p>
+         <p><b>Address :</b>{{customer_address}}</p>
+         <p><b>Number :</b>{{customer_number}}</p>
+         <div class="row">
+      <div class="col-md-6" *ngFor="let pizza of cartList;let i=index">
+        <p><b>Pizza :</b>{{pizza.name}}</p>
+        <!-- <img class="img" [src]="pizza.image " width=250px; height=250px;> -->
+        <p><b>Price :</b> {{ pizza.price | currency}}</p>
+        <p><b>Price :</b>{{ pizza.price * 0.84 |  currency:'EUR'}}</p>
+        <p><b>Quantity :</b>{{pizza.quantity}}</p>
+        </div>
+    </div>
+      <hr>
+       <p> Total bill US:20$ delivery cost = {{total | currency}}</p>
+       <p> Total bill Euro: {{total * 0.84 |  currency:'EUR' }}</p>
+      
+      </div>
+      </div>
+      <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+        <div *ngIf="!toggle" class="container">
+            <div class="row no-gutters">
+                <div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+                    <form action="#" class="appointment-form">
+                        <h3 class="mb-3">Please provide the following details </h3>
+                        <div class="row justify-content-center">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="name"  [(ngModel)]="customer_name"  class="form-control"  name="name" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text"  [(ngModel)]="customer_address" name="Address" class="form-control" placeholder="Address" required >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  [(ngModel)]="customer_number"  name="Phone" placeholder="Phone">
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <button class="btn-default" type="submit" (click)="toggle=true">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    
