@@ -25,7 +25,7 @@
 <div class="row">
     <div class="side">
       <h2>Cart</h2>
-      <div *ngFor="let pizza of cartList;let i=index">
+      <div   *ngFor="let pizza of cartList;let i=index">
         <p>Name :<b>{{pizza.name}}</b></p>
          <p>Quantity :<b>{{pizza.quantity}}</b></p>
         <p>Price :<b>{{ pizza.price | currency}}</b></p>
