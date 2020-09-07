@@ -31,6 +31,7 @@ export class MenuComponent implements OnInit {
     else{
       this.quantity=e.target.value;
       
+      
     }
   }
   addToCart(pizza,p)
