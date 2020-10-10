@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './menu/menu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CartComponent } from './menu/cart/cart.component';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     CustomerDetailsComponent,
     MenuComponent,
-    DashboardComponent
+    DashboardComponent,
+    CartComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule ,
     FormsModule ,
+    ReactiveFormsModule,
+    BrowserModule
     
   ],
   providers: [],

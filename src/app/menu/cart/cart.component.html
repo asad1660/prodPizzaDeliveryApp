@@ -1,0 +1,17 @@
+<div class="container">
+   
+      <h2>Cart</h2>
+      <div   *ngFor="let pizza of cartList;let i=index">
+        <p>Name :<b>{{pizza.name}}</b></p>
+         <p>Quantity :<b>{{pizza.quantity}}</b></p>
+        <p>Price :<b>{{ pizza.price | currency}}</b></p>
+        <p>Price :<b>{{ pizza.price * 0.84 |  currency:'EUR'}}</b></p>
+        <button class="btn-danger" (click)="delete(i)">-</button>
+      
+      
+      <p> Total : <b>{{total | currency}}</b></p>
+      <p> Total : <b>{{total * 0.84 |  currency:'EUR' }}</b></p>
+  <button *ngIf="cartList.length > 0" class="btn-success"  (click)="customerdetail()">Done</button>
+      
+    </div>
+  </div>

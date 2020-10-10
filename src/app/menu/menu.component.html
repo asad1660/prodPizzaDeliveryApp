@@ -1,44 +1,11 @@
 
-
-  
-  <section class="hero-wrap">
-    <div class="home-slider owl-carousel js-fullheight">
-        <div class="slider-item js-fullheight" style="background-image:url(assets/bg_1.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-                    <div class="col-md-12 ftco-animate">
-                        <div class="text w-100 mt-5 text-center">
-                            <span class="subheading"><h2>Taste.it Restaurant</h2></span>
-                            <h1>Cooking Since</h1>
-                            <span class="subheading-2">1958</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> 
-</section>
+  <div class="jumbotron">
+  </div>
 
 
-<div class="row">
-    <div class="side">
-      <h2>Cart</h2>
-      <div   *ngFor="let pizza of cartList;let i=index">
-        <p>Name :<b>{{pizza.name}}</b></p>
-         <p>Quantity :<b>{{pizza.quantity}}</b></p>
-        <p>Price :<b>{{ pizza.price | currency}}</b></p>
-        <p>Price :<b>{{ pizza.price * 0.84 |  currency:'EUR'}}</b></p>
-        <button class="btn-danger" (click)="delete(i,pizza.price,pizza.quantity)">-</button>
-      
-      </div>
-      <p> Total : <b>{{total | currency}}</b></p>
-      <p> Total : <b>{{total * 0.84 |  currency:'EUR' }}</b></p>
-      <button *ngIf="cartList.length > 0" class="btn-success"  (click)="customerdetail()">Done</button>
-      
-    </div>
-    <div class="main">
+
+
+    <!-- <div class="main">
       <h2>Menu</h2>
       
     <div class="row">
@@ -58,7 +25,34 @@
       </div>
       </div>
   </div>
-                        
+                         -->
+   <div class="container">
+     <div class="row">
+      <div class="col-md-4">
+        <app-cart [cartList]="cartList" (changess)="delete($event)"></app-cart>
+             </div>
+             <form [formGroup]="form">
+       <div class="split left">
+        
+        <div *ngFor="let pizza of pizzaList;let i=index">
+         
+            <p><b>{{"Name :"+pizza.name}}</b></p>
+            <img class="img" [src]="pizza.image " style="height:200px;">
+            <p><b>Price :{{ pizza.price | currency}}</b></p>
+            <p><b>Price :{{ pizza.price * 0.84 |  currency:'EUR'}}</b></p>          
+          
+          <input type="number" formControlName="number" min="0"  (input)="addquantity($event)" >
+          <button class="btn-success" (click)="addToCart(pizza,pizza.price);this.form.reset()">Add to cart</button>
+
+          </div>
+
+          </div>
+             </form>
+       </div> 
+       </div>
+
+
+                  
         
 
       
