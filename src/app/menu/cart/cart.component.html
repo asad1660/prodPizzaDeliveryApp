@@ -1,17 +1,37 @@
-<div class="container">
-   
-      <h2>Cart</h2>
+<div  class="container">
+   <div class="row">
+      <h2 *ngIf="cartList.length > 0">Cart</h2>
       <div   *ngFor="let pizza of cartList;let i=index">
-        <p>Name :<b>{{pizza.name}}</b></p>
-         <p>Quantity :<b>{{pizza.quantity}}</b></p>
-        <p>Price :<b>{{ pizza.price | currency}}</b></p>
-        <p>Price :<b>{{ pizza.price * 0.84 |  currency:'EUR'}}</b></p>
-        <button class="btn-danger" (click)="delete(i)">-</button>
+       <div class="col-12"><p>Name : {{pizza.name}}</p></div> 
+        <div class="col-12"><p>Quantity :{{pizza.quantity}}</p></div> 
+       <div class="col-12"> <p>Price {{ pizza.price | currency}} | {{ pizza.price * 0.84 |  currency:'EUR'}}</p></div>
+        <button type="button" class="btn btn-outline-danger"  (click)="delete(i)">-</button>
       
-      
-      <p> Total : <b>{{total | currency}}</b></p>
-      <p> Total : <b>{{total * 0.84 |  currency:'EUR' }}</b></p>
-  <button *ngIf="cartList.length > 0" class="btn-success"  (click)="customerdetail()">Done</button>
-      
+   
+</div>
+   <br><br>
+  
+<div *ngIf="cartList.length > 0" class="col-12"> <p> Total : {{total | currency}}|{{total * 0.84 |  currency:'EUR' }}</p></div> 
+<button *ngIf="cartList.length > 0" type="button" class="btn btn-outline-success" [routerLink]="['./customerdetail']" (click)="customerdetail()">Done</button>
     </div>
+    <!-- <table class="table table-striped" *ngFor="let pizza of cartList;let i=index">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>quantity</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{pizza.name}}</td>
+          <td>{{pizza.quantity}}</td>
+          <td>{{pizza.price}}</td>
+          <td><button class="btn-danger" (click)="delete(i)">-</button></td>
+        </tr>
+       
+      </tbody>
+    </table> -->
+
+   
   </div>

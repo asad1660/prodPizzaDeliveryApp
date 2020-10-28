@@ -1,6 +1,6 @@
 
-  <div class="jumbotron">
-  </div>
+  <!-- <div class="jumbotron">
+  </div> -->
 
 
 
@@ -24,40 +24,59 @@
       <button class="btn-success" (click)="addToCart(pizza,pizza.price)">Add to cart</button>
       </div>
       </div>
-  </div>
-                         -->
-   <div class="container">
-     <div class="row">
-      <div class="col-md-4">
-        <app-cart [cartList]="cartList" (changess)="delete($event)"></app-cart>
-             </div>
-             <form [formGroup]="form">
-       <div class="split left">
+  </div> -->
+                         
+
+       <div class="container box_outer">
+        <div class="box_whcls row">
+        <div class="col-12">
         
-        <div *ngFor="let pizza of pizzaList;let i=index">
-         
-            <p><b>{{"Name :"+pizza.name}}</b></p>
-            <img class="img" [src]="pizza.image " style="height:200px;">
-            <p><b>Price :{{ pizza.price | currency}}</b></p>
-            <p><b>Price :{{ pizza.price * 0.84 |  currency:'EUR'}}</b></p>          
+            
+            <div class="fr_left fr_field mtop20">
+              <app-cart [cartList]="cartList" [total]="total" (changess)="delete($event)"></app-cart>
+                       
+            </div>
+            
+            <div  class="fr_right mtop20">  
+                <div class="row">
+              <div class="chrow" *ngFor="let pizza of pizzaList;let i=index">
+              <div class="col-md-6">
+               
+                <img class="image-block" [src]="pizza.image">
+                <div>
+                <p>{{"Name :"+pizza.name}}<p>
+                <p>Price :{{ pizza.price | currency}} |
+                {{ pizza.price * 0.84 |  currency:'EUR'}}</p>
+                 
+                
           
-          <input type="number" formControlName="number" min="0"  (input)="addquantity($event)" >
-          <button class="btn-success" (click)="addToCart(pizza,pizza.price);this.form.reset()">Add to cart</button>
-
-          </div>
-
-          </div>
-             </form>
-       </div> 
-       </div>
-
-
+           
+                  <table><tr><td>
+               <input type="number"   min="0"  (input)="addquantity($event)">
+                  </td><td>
+                    <button  class="btn btn-outline-success" (click)="addToCart(pizza,pizza.price);this.form.reset()">&#x2b;</button>
                   
+                  </td></tr></table>
+            
+              </div>
+                
+              </div>
+             
+            </div>
+              </div>       
+            </div>
+          
+         
+         
+         <div class="clearfix"></div>
+         
+     
+         
+        </div>
         
-
-      
-  
-   
+        </div>
+        
+        </div>
 
 
 

@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit {
   });
   }
   ngOnInit() {
+
    localStorage.removeItem("data");
    localStorage.removeItem("total");
   }
@@ -71,11 +72,11 @@ export class MenuComponent implements OnInit {
     else{
       alert("Please add Quantity");
     }
-    this.billCalculate();
+    this.billCalculate(this.cartList);
   }
-billCalculate(){
-  
-this.cartList.map(x=>{
+billCalculate(param){
+  this.total=0;
+      param.map(x=>{
   let bill=0;
   bill=Number(x.price) * x.quantity;
   this.total=this.total + bill;
@@ -87,6 +88,7 @@ console.log(this.total);
   delete(i){
 
    this.cartList.splice(i,1);
+   this.billCalculate(this.cartList);
   }
 customerdetail(){
   localStorage.setItem("data",JSON.stringify(this.cartList));

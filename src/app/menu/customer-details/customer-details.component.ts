@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MainService } from 'src/app/main.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -8,17 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerDetailsComponent implements OnInit {
 toggle=false;
 cartList:any;
-total=0;
+total:any;
 customer_name;
 customer_address;
 customer_number;
-  constructor() { }
+  constructor(mainservice:MainService) {
+    this.cartList=mainservice.getCartlist();
+    console.log(mainservice.getCartlist());
+   }
 
   ngOnInit(): void {
-    this.cartList=JSON.parse(localStorage.getItem("data"));
-    this.total=JSON.parse(localStorage.getItem("total"));
-   
-   
+   console.log("yo",this.cartList);
   }
   bill(){
     if(this.toggle== false){

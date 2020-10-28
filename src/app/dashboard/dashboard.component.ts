@@ -15,5 +15,9 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem("data");
     localStorage.removeItem("total");
   }
+  // @HostListener('window:hashchange', ['$event'])
+  // hashChangeHandler(e) {
+  //   window.onhashchange(e.alert("Sad"));
+  // } 
 
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 
 
@@ -6,7 +7,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MainService {
-   pizzas = [
+  public _cartList = [];
+  pizzas = [
     { id: 11, name: 'Mr. Nice', image: 'assets/1.png', price: 200, type: 'Cheese burst' },
     { id: 12, name: 'Narco', image: './assets/2.png', price: 300, type: 'Cheese burst' },
     { id: 13, name: 'Bombasto', image: 'assets/3.png', price: 200, type: 'Cheese burst' },
@@ -20,5 +22,11 @@ export class MainService {
   constructor() { }
   get_Pizaalist(){
     return this.pizzas;
+  }
+  setCartlist(params:[]){
+    this._cartList=params;
+  }
+  getCartlist(){
+    return this._cartList;
   }
 }
