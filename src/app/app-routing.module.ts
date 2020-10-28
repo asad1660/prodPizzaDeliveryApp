@@ -19,6 +19,7 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'menu/customerdetail',
     component: CustomerDetailsComponent
   },
   {
